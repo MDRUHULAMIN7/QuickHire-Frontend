@@ -31,13 +31,13 @@ const CTAPage = () => {
               </button>
             </div>
 
-            <div className="relative min-h-80 w-full lg:min-h-105">
-              <div className="relative z-50 w-100 sm:w-130 md:w-145 lg:max-w-185 overflow-hidden bg-white lg:absolute lg:-bottom-16 lg:right-0">
+            <div className="relative w-full min-h-80 lg:min-h-105">
+              <div className="relative z-50 w-75 sm:w-100 md:w-175 lg:w-160 xl:w-180 overflow-hidden bg-white lg:absolute lg:-bottom-16 lg:-right-10">
                 <Image
                   src="/cta.png"                     
                   alt="QuickHire Dashboard"
-                  className="h-full w-full "
-                  height={700}
+                  className="h-auto w-full"
+                  height={800}
                   width={700}
                 />
               </div>

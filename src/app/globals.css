@@ -24,3 +24,22 @@ body {
 .font-brand { font-family: var(--font-redhat); }
 .font-epilogue { font-family: var(--font-epilogue); }
 .font-clash { font-family: "Clash Display", var(--font-redhat), system-ui, sans-serif; }
+
+.featured-swiper {
+  padding-bottom: 32px;
+}
+
+.featured-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.featured-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+}
+
+.featured-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #26a4ff;
+}

@@ -41,3 +41,17 @@ export async function getJobCategorySummary() {
   );
   return res.data;
 }
+
+export async function getFeaturedJobs(limit = 8) {
+  const res = await api.get<ApiResponse<JobDetail[]>>("/jobs/_featured", {
+    params: { limit },
+  });
+  return res.data;
+}
+
+export async function getLatestJobs(limit = 8) {
+  const res = await api.get<ApiResponse<JobDetail[]>>("/jobs/_latest", {
+    params: { limit },
+  });
+  return res.data;
+}
