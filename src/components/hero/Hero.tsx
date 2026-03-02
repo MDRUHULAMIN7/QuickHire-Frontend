@@ -68,16 +68,12 @@ export default function Hero() {
           </div>
 
           <div className="relative hidden md:block">
-            <div className="absolute -left-40 top-10 -z-10">
-          
-            
-            </div>
             <Image
               src="/images/hero/hero_man.png"
               alt="Person"
               width={542}
               height={744}
-              className="max-w-full h-auto"
+              className="max-w-full h-auto md:translate-x-8 lg:translate-x-16 xl:translate-x-24"
               priority
             />
           </div>

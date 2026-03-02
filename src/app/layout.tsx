@@ -1,23 +1,24 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { QueryProvider } from '@/components/providers/QueryProvider';
-import { Red_Hat_Display, Epilogue } from 'next/font/google';
+import type { Metadata } from "next";
+import "./globals.css";
+import { QueryProvider } from "@/components/providers/QueryProvider";
+import { Red_Hat_Display, Epilogue } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 const redHat = Red_Hat_Display({
-  subsets: ['latin'],
-  variable: '--font-redhat',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-redhat",
+  display: "swap",
 });
 
 const epilogue = Epilogue({
-  subsets: ['latin'],
-  variable: '--font-epilogue',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-epilogue",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: 'QuickHire',
-  description: 'Discover more than 5000+ Jobs',
+  title: "QuickHire",
+  description: "Discover more than 5000+ Jobs",
 };
 
 export default function RootLayout({
@@ -31,8 +32,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${redHat.variable} ${epilogue.variable}`}>
         <QueryProvider>
-          {children}
+          <div className="min-h-screen flex flex-col">{children}</div>
           {modal}
+          <Toaster position="top-right" />
         </QueryProvider>
       </body>
     </html>
