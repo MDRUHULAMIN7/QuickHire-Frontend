@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowLeft, Briefcase, MapPin } from "lucide-react";
 import { getJob } from "@/lib/api/jobs";
 import type { ApiResponse } from "@/lib/types/api";
 import type { JobDetail } from "@/lib/types/job";
+import JobApplyModal from "@/components/jobs/JobApplyModal";
 
 type JobDetailContainerProps = {
   id: string;
@@ -22,6 +24,7 @@ function getInitials(name: string) {
 }
 
 export default function JobDetailContainer({ id }: JobDetailContainerProps) {
+  const [applyOpen, setApplyOpen] = useState(false);
   const { data, isLoading, isError } = useQuery<ApiResponse<JobDetail>>({
     queryKey: ["jobDetail", id],
     queryFn: () => getJob(id),
@@ -30,6 +33,13 @@ export default function JobDetailContainer({ id }: JobDetailContainerProps) {
   });
 
   const job = data?.data;
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash === "#apply") {
+      setApplyOpen(true);
+    }
+  }, []);
 
   if (isLoading) {
     return (
@@ -111,6 +121,7 @@ export default function JobDetailContainer({ id }: JobDetailContainerProps) {
 
           <button
             type="button"
+            onClick={() => setApplyOpen(true)}
             className="rounded-lg bg-indigo-600 px-6 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700"
           >
             Apply now
@@ -137,6 +148,16 @@ export default function JobDetailContainer({ id }: JobDetailContainerProps) {
           </div>
         )}
       </div>
+
+      {job && (
+        <JobApplyModal
+          open={applyOpen}
+          jobId={job._id}
+          jobTitle={job.title}
+          company={job.company}
+          onClose={() => setApplyOpen(false)}
+        />
+      )}
     </section>
   );
 }

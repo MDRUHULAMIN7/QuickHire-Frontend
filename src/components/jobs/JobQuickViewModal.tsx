@@ -94,12 +94,12 @@ export default function JobQuickViewModal({
               >
                 View full details
               </Link>
-              <button
-                type="button"
+              <Link
+                href={`/jobs/${job._id}#apply`}
                 className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-50"
               >
                 Apply now
-              </button>
+              </Link>
             </div>
           </>
         )}

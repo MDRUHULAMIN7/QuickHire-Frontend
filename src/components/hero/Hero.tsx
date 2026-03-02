@@ -22,7 +22,7 @@ export default function Hero() {
               Discover
               <br /> more than
               <br />
-              <span className="text-cyan-600">5000+ Jobs</span>
+              <span className="text-[#26A4FF]">5000+ Jobs</span>
             </h1>
             <div className="-mt-1 mb-6">
               <Image

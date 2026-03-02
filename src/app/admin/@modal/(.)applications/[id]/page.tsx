@@ -2,9 +2,9 @@
 
 import { use } from "react";
 import { useRouter } from "next/navigation";
-import JobDetailsPanel from "@/components/admin/jobs/JobDetailsPanel";
+import ApplicationDetailsPanel from "@/components/admin/applications/ApplicationDetailsPanel";
 
-export default function AdminJobDetailsModal({
+export default function AdminApplicationDetailsModal({
   params,
 }: {
   params: Promise<{ id: string }>;
@@ -24,7 +24,7 @@ export default function AdminJobDetailsModal({
         <div className="rounded-2xl border border-slate-200 bg-white shadow-2xl">
           <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
             <h2 className="text-base font-semibold text-slate-900">
-              Job details
+              Application details
             </h2>
             <button
               type="button"
@@ -35,7 +35,7 @@ export default function AdminJobDetailsModal({
             </button>
           </div>
           <div className="px-6 py-5">
-            <JobDetailsPanel jobId={id} />
+            <ApplicationDetailsPanel applicationId={id} />
           </div>
         </div>
       </div>
