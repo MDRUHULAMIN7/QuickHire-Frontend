@@ -3,7 +3,7 @@ import { Search, MapPin } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-[#F8F8FD]">
       <div className="absolute inset-y-0 right-0 pointer-events-none select-none">
         <Image
           src="/images/hero/Pattern.png"
@@ -37,7 +37,7 @@ export default function Hero() {
               heights and passionate about startups.
             </p>
 
-            <div className="mt-8 md:mt-0 md:absolute md:bottom-6 md:left-0 md:w-[720px]  xl:w-[900px] md:max-w-none rounded-xl shadow-[0_6px_24px_rgba(0,0,0,0.08)] bg-white md:z-20">
+            <div className="mt-8 md:mt-0 md:absolute md:bottom-6 md:left-0 md:w-180  xl:w-225 md:max-w-none rounded-xl shadow-[0_6px_24px_rgba(0,0,0,0.08)] bg-white md:z-20">
               <div className="flex flex-col md:flex-row">
                 <div className="flex-1 flex items-center gap-2 px-4 py-3 ">
                   <Search className="text-gray-800" size={22} />

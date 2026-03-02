@@ -52,3 +52,10 @@ export type JobListResponse = {
   meta: PaginationMeta;
   data: JobSummary[];
 };
+
+export type JobCategorySummary = {
+  key: string;
+  name: string;
+  icon: string;
+  count: number;
+};

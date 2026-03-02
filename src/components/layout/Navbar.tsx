@@ -4,7 +4,7 @@ import { Menu } from "lucide-react";
 
 export function Navbar() {
   return (
-    <header className=" bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className=" bg-transparent">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center  gap-x-12">
           <Link href="/" className="flex items-center gap-2">

@@ -1,9 +1,5 @@
-import JobsContainer from '@/components/jobs/JobsContainer';
+import JobsContainer from "@/components/jobs/JobsContainer";
 
-export default function JobsPage({
-  searchParams,
-}: {
-  searchParams?: Record<string, string | string[] | undefined>;
-}) {
-  return <JobsContainer initialQuery={searchParams ?? {}} />;
+export default function JobsPage() {
+  return <JobsContainer />;
 }

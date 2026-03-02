@@ -1,6 +1,7 @@
 import api from "./client";
 import type { ApiResponse } from "../types/api";
 import type {
+  JobCategorySummary,
   JobDetail,
   JobListResponse,
   JobPayload,
@@ -31,5 +32,12 @@ export async function updateJob(id: string, payload: JobPayload) {
 
 export async function deleteJob(id: string) {
   const res = await api.delete<ApiResponse<JobDetail>>(`/jobs/${id}`);
+  return res.data;
+}
+
+export async function getJobCategorySummary() {
+  const res = await api.get<ApiResponse<JobCategorySummary[]>>(
+    "/jobs/_summary/categories",
+  );
   return res.data;
 }
