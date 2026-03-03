@@ -181,17 +181,17 @@ export default function JobsContainer() {
   }, [meta]);
 
   return (
-    <section className="container mx-auto px-4 py-12 space-y-6">
+    <section className="container-class py-18 space-y-6">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-sm text-slate-500">Find your next role</p>
+          <p className=" text-slate-500">Find your next role</p>
           <h1 className="font-clash text-3xl font-bold text-slate-900">
             All Jobs
           </h1>
         </div>
         <Link
           href="/"
-          className="text-sm font-semibold text-indigo-600 hover:text-indigo-700"
+          className=" font-semibold text-indigo-600 hover:text-indigo-700"
         >
           Back to home
         </Link>

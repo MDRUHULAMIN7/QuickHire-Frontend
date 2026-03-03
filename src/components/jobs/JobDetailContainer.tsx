@@ -43,7 +43,7 @@ export default function JobDetailContainer({ id }: JobDetailContainerProps) {
 
   if (isLoading) {
     return (
-      <section className="container mx-auto px-4 py-10">
+      <section className="container-class py-18">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
           Loading job...
         </div>
@@ -53,7 +53,7 @@ export default function JobDetailContainer({ id }: JobDetailContainerProps) {
 
   if (isError || !job) {
     return (
-      <section className="container mx-auto px-4 py-10">
+      <section className="container-class py-18">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
           Job not found.
         </div>
@@ -62,7 +62,7 @@ export default function JobDetailContainer({ id }: JobDetailContainerProps) {
   }
 
   return (
-    <section className="container mx-auto px-4 py-10 space-y-6">
+    <section className="container-class py-18 space-y-6">
       <Link
         href="/jobs"
         className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-700"
