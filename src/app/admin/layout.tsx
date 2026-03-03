@@ -1,8 +1,10 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import AdminSidebar from "@/components/admin/AdminSidebar";
 import AdminTopbar from "@/components/admin/AdminTopbar";
+import { useAuth } from "@/components/providers/AuthProvider";
+import { useRouter } from "next/navigation";
 
 export default function AdminLayout({
   children,
@@ -12,6 +14,18 @@ export default function AdminLayout({
   modal: React.ReactNode;
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { isLoggedIn, isReady } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isReady && !isLoggedIn) {
+      router.replace("/login");
+    }
+  }, [isLoggedIn, isReady, router]);
+
+  if (!isReady) {
+    return <div className="min-h-screen bg-slate-50" />;
+  }
 
   return (
     <div className="flex h-screen bg-slate-50 overflow-hidden">

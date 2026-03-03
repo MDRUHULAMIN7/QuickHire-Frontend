@@ -4,6 +4,7 @@ import { useState } from "react";
 import { login } from "@/lib/api/auth";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
+import { useAuth } from "@/components/providers/AuthProvider";
 
 type LoginValues = { id: string; password: string };
 
@@ -11,12 +12,14 @@ export default function LoginPage() {
   const { register, handleSubmit } = useForm<LoginValues>();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const { refreshUser } = useAuth();
 
   const onSubmit = async (values: LoginValues) => {
     try {
       setLoading(true);
       const res = await login(values);
       localStorage.setItem("qh_access_token", res.data.accessToken);
+      await refreshUser();
       toast.success("Logged in successfully");
       router.push("/admin");
     } catch (err: any) {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { QueryProvider } from "@/components/providers/QueryProvider";
+import { AuthProvider } from "@/components/providers/AuthProvider";
 import { Red_Hat_Display, Epilogue } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
@@ -32,9 +33,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${redHat.variable} ${epilogue.variable}`}>
         <QueryProvider>
-          <div className="min-h-screen flex flex-col">{children}</div>
-          {modal}
-          <Toaster position="top-right" />
+          <AuthProvider>
+            <div className="min-h-screen flex flex-col">{children}</div>
+            {modal}
+            <Toaster position="top-right" />
+          </AuthProvider>
         </QueryProvider>
       </body>
     </html>

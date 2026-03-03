@@ -6,6 +6,14 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["@tanstack/react-query", "lucide-react"],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.ibb.co.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

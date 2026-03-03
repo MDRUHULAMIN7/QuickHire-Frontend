@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { LogOut, Menu } from "lucide-react";
 import { toast } from "react-hot-toast";
+import { useAuth } from "@/components/providers/AuthProvider";
 
 type AdminTopbarProps = {
   onMenuClick: () => void;
@@ -24,9 +25,10 @@ function usePageTitle() {
 export default function AdminTopbar({ onMenuClick }: AdminTopbarProps) {
   const title = usePageTitle();
   const router = useRouter();
+  const { logout } = useAuth();
 
   const handleLogout = () => {
-    localStorage.removeItem("qh_access_token");
+    logout();
     toast.success("Logged out");
     router.push("/login");
   };
