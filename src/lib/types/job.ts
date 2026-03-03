@@ -45,6 +45,7 @@ export type JobQueryParams = {
   sort?: string;
   fields?: string;
   category?: string;
+  location?: string;
   employment_type?: string;
 };
 
