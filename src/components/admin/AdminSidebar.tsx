@@ -74,7 +74,13 @@ export default function AdminSidebar({ open, onClose }: AdminSidebarProps) {
       {/* Logo */}
       <div className="h-16 flex items-center justify-between px-5 border-b border-slate-200 shrink-0">
         <Link href="/" className="flex items-center gap-2" onClick={handleNavClick}>
-          <Image src="/logo.png" alt="QuickHire" width={40} height={28} />
+          <Image
+            src="/logo.png"
+            alt="QuickHire"
+            width={40}
+            height={28}
+            unoptimized
+          />
           <span className="font-brand font-bold text-[20px] text-slate-900">
             QuickHire
           </span>

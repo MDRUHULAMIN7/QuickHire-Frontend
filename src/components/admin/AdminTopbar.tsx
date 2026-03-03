@@ -57,9 +57,9 @@ export default function AdminTopbar({ onMenuClick }: AdminTopbarProps) {
         <button
           type="button"
           onClick={handleLogout}
-          className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-2 text-[11px] font-bold text-white transition hover:bg-indigo-700"
+          className="inline-flex items-center gap-2  bg-indigo-600 px-5 py-3 text-[14px] font-bold text-white transition hover:bg-indigo-700"
         >
-          <LogOut size={12} />
+          <LogOut size={18} />
           Logout
         </button>
       </div>

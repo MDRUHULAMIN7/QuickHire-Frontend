@@ -50,7 +50,13 @@ export function Navbar() {
       <div className=" container-class  h-16 flex items-center justify-between">
         <div className="flex items-center  gap-x-12">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="QuickHire" width={40} height={28} />
+            <Image
+              src="/logo.png"
+              alt="QuickHire"
+              width={40}
+              height={28}
+              unoptimized
+            />
             <span className="font-brand font-bold text-[24px]">QuickHire</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm text-gray-700">

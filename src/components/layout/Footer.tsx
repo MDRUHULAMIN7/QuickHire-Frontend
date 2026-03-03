@@ -9,7 +9,13 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row justify-between gap-x-6 gap-y-10 lg:gap-y-0">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="QuickHire" width={34} height={24} />
+              <Image
+                src="/logo.png"
+                alt="QuickHire"
+                width={34}
+                height={24}
+                unoptimized
+              />
               <span className="font-brand font-bold text-2xl text-white">
                 QuickHire
               </span>
