@@ -51,7 +51,7 @@ export function Navbar() {
         <div className="flex items-center  gap-x-12">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo.png"
+              src="https://i.ibb.co.com/3mH950nv/logo.png"
               alt="QuickHire"
               width={40}
               height={28}

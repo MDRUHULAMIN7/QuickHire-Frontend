@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/logo.png"
+                src="https://i.ibb.co.com/3mH950nv/logo.png"
                 alt="QuickHire"
                 width={34}
                 height={24}

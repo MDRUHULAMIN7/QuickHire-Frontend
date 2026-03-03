@@ -39,7 +39,6 @@ const NAV_GROUPS: NavGroup[] = [
         href: "/admin/applications",
         label: "Applications",
         icon: ClipboardList,
-        badge: "12",
       },
     ],
   },
@@ -75,7 +74,7 @@ export default function AdminSidebar({ open, onClose }: AdminSidebarProps) {
       <div className="h-16 flex items-center justify-between px-5 border-b border-slate-200 shrink-0">
         <Link href="/" className="flex items-center gap-2" onClick={handleNavClick}>
           <Image
-            src="/logo.png"
+            src="https://i.ibb.co.com/3mH950nv/logo.png"
             alt="QuickHire"
             width={40}
             height={28}
