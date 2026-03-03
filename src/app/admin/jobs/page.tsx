@@ -27,7 +27,7 @@ import {
   mapFormToPayload,
   mapJobToFormValues,
 } from "@/lib/utils/adminJobs";
-import { useDebouncedValue } from "@/lib/utils/useDebouncedValue";
+import { useDebouncedValue } from "@/lib/hooks/useDebouncedValue";
 import JobsTable from "@/components/admin/jobs/JobsTable";
 import JobFormModal from "@/components/admin/jobs/JobFormModal";
 import ConfirmModal from "@/components/admin/jobs/ConfirmModal";

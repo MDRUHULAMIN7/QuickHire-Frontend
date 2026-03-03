@@ -12,7 +12,7 @@ import type {
   ApplicationStatus,
 } from "@/lib/types/application";
 import { buildApplicationQuery, APPLICATION_STATUSES } from "@/lib/utils/adminApplications";
-import { useDebouncedValue } from "@/lib/utils/useDebouncedValue";
+import { useDebouncedValue } from "@/lib/hooks/useDebouncedValue";
 import ApplicationsTable from "@/components/admin/applications/ApplicationsTable";
 
 const LIMIT_OPTIONS = [5, 10, 20, 30];

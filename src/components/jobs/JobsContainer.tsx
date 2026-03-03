@@ -10,7 +10,7 @@ import type { ApiResponse } from "@/lib/types/api";
 import type { JobListResponse, JobSummary } from "@/lib/types/job";
 import { buildJobQuery } from "@/lib/utils/adminJobs";
 import { EMPLOYMENT_TYPES, JOB_CATEGORIES } from "@/lib/utils/constants";
-import { useDebouncedValue } from "@/lib/utils/useDebouncedValue";
+import { useDebouncedValue } from "@/lib/hooks/useDebouncedValue";
 import JobQuickViewModal from "@/components/jobs/JobQuickViewModal";
 
 const LIMIT_OPTIONS = [6, 12, 24];
