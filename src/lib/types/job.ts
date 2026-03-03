@@ -1,3 +1,4 @@
+import { LucideIcon } from "lucide-react";
 import type { PaginationMeta } from "./api";
 
 export type JobSummary = {
@@ -59,4 +60,13 @@ export type JobCategorySummary = {
   name: string;
   icon: string;
   count: number;
+};
+export type ExploreCategoryCardProps = {
+  href: string | { pathname: string; query?: Record<string, string> };
+  name: string;
+  count: number;
+  Icon?: LucideIcon;
+  isFeatured?: boolean;
+  isLoading?: boolean;
+  isError?: boolean;
 };

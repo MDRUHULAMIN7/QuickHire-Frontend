@@ -3,23 +3,8 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { getMe } from "@/lib/api/user";
 import { refreshAccessToken } from "@/lib/api/auth";
+import { AuthContextValue, AuthUser } from "@/lib/types/api";
 
-export type AuthUser = {
-  id: string;
-  email: string;
-  role?: string;
-  name?: string;
-  avatarUrl?: string;
-};
-
-type AuthContextValue = {
-  user: AuthUser | null;
-  isLoggedIn: boolean;
-  isReady: boolean;
-  refreshUser: () => Promise<void>;
-  setUser: (user: AuthUser | null) => void;
-  logout: () => void;
-};
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
