@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState, type FormEvent } from "react";
 import { getJobs } from "@/lib/api/jobs";
 import type { JobSummary } from "@/lib/types/job";
+import StateMessage from "@/components/ui/StateMessage";
 
 export default function Hero() {
   const router = useRouter();
@@ -94,7 +95,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#F8F8FD] md:min-h-180 [clip-path:polygon(0%_0%,100%_0%,100%_100%,100%_100%,0%_100%,0%_0%)]
+      className="relative h-180 overflow-hidden bg-[#F8F8FD] [clip-path:polygon(0%_0%,100%_0%,100%_100%,100%_100%,0%_100%,0%_0%)]
   md:[clip-path:polygon(0%_0%,100%_0%,100%_75%,80%_100%,0%_100%,0%_0%)]
   lg:[clip-path:polygon(0%_0%,100%_0%,100%_70%,78%_100%,0%_100%,0%_0%)]"
     >
@@ -109,7 +110,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="container-class h-full relative">
+      <div className="container-class h-full relative overflow-y-auto pr-2">
         <div className="relative max-w-2xl pt-16 md:pt-30 md:pb-18 ">
           <h1 className="font-clash text-6xl md:text-5xl xl:text-[80px] font-extrabold leading-tight text-gray-900">
             Discover
@@ -195,7 +196,7 @@ export default function Hero() {
           role="dialog"
           aria-modal="true"
         >
-          <div className="w-full max-w-2xl rounded-2xl bg-white shadow-2xl">
+          <div className="w-full max-w-2xl max-h-[85vh] rounded-2xl bg-white shadow-2xl flex flex-col">
             <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
               <div>
                 <h3 className="text-base font-semibold text-slate-900">
@@ -210,13 +211,13 @@ export default function Hero() {
                 )}
               </div>
             </div>
-            <div className="px-5 py-4">
+            <div className="px-5 py-4 flex-1 overflow-y-auto">
               {isLoading ? (
-                <div className="text-sm text-slate-500">Loading jobs...</div>
+                <StateMessage message="Loading jobs..." />
               ) : error ? (
-                <div className="text-sm text-rose-500">{error}</div>
+                <StateMessage tone="error" message={error} />
               ) : results.length === 0 ? (
-                <div className="text-sm text-slate-500">No jobs found.</div>
+                <StateMessage message="No jobs found." />
               ) : (
                 <ul className="space-y-3">
                   {results.map((job) => (

@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { getMe } from "@/lib/api/user";
+import { refreshAccessToken } from "@/lib/api/auth";
 
 export type AuthUser = {
   id: string;
@@ -60,6 +61,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       });
     } catch (error: any) {
       if (error?.response?.status === 401) {
+        try {
+          const refreshed = await refreshAccessToken();
+          const newToken = refreshed?.data?.accessToken;
+          if (newToken) {
+            localStorage.setItem(TOKEN_STORAGE_KEY, newToken);
+            setHasToken(true);
+            const retry = await getMe();
+            const apiUser = retry.data;
+            persistUser({
+              id: apiUser.id,
+              email: apiUser.email,
+              role: apiUser.role,
+              name: apiUser.name,
+              avatarUrl: apiUser.avatarUrl,
+            });
+            return;
+          }
+        } catch {
+          // fall through
+        }
         localStorage.removeItem(TOKEN_STORAGE_KEY);
         setHasToken(false);
         persistUser(null);

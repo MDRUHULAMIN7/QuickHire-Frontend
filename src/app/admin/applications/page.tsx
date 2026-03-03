@@ -14,6 +14,7 @@ import type {
 import { buildApplicationQuery, APPLICATION_STATUSES } from "@/lib/utils/adminApplications";
 import { useDebouncedValue } from "@/lib/hooks/useDebouncedValue";
 import ApplicationsTable from "@/components/admin/applications/ApplicationsTable";
+import StateMessage from "@/components/ui/StateMessage";
 
 const LIMIT_OPTIONS = [5, 10, 20, 30];
 
@@ -173,13 +174,9 @@ export default function AdminApplicationsPage() {
       </div>
 
       {isLoading ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
-          Loading applications...
-        </div>
+        <StateMessage variant="card" message="Loading applications..." />
       ) : apps.length === 0 ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
-          No applications found.
-        </div>
+        <StateMessage variant="card" message="No applications found." />
       ) : (
         <ApplicationsTable
           applications={apps}

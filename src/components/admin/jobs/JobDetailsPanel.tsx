@@ -5,6 +5,7 @@ import { getJob } from "@/lib/api/jobs";
 import type { ApiResponse } from "@/lib/types/api";
 import type { JobDetail } from "@/lib/types/job";
 import { timeAgo } from "@/lib/utils/format";
+import StateMessage from "@/components/ui/StateMessage";
 
 type JobDetailsPanelProps = {
   jobId: string;
@@ -31,9 +32,10 @@ export default function JobDetailsPanel({ jobId }: JobDetailsPanelProps) {
 
   if (isError || !data?.data) {
     return (
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
-        Unable to load job details.
-      </div>
+      <StateMessage
+        variant="card"
+        message="Unable to load job details."
+      />
     );
   }
 

@@ -9,6 +9,7 @@ import { getJob } from "@/lib/api/jobs";
 import type { ApiResponse } from "@/lib/types/api";
 import type { JobDetail } from "@/lib/types/job";
 import JobApplyModal from "@/components/jobs/JobApplyModal";
+import StateMessage from "@/components/ui/StateMessage";
 
 type JobDetailContainerProps = {
   id: string;
@@ -44,9 +45,7 @@ export default function JobDetailContainer({ id }: JobDetailContainerProps) {
   if (isLoading) {
     return (
       <section className="container-class py-18">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
-          Loading job...
-        </div>
+        <StateMessage variant="card" message="Loading job..." />
       </section>
     );
   }
@@ -54,9 +53,7 @@ export default function JobDetailContainer({ id }: JobDetailContainerProps) {
   if (isError || !job) {
     return (
       <section className="container-class py-18">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
-          Job not found.
-        </div>
+        <StateMessage variant="card" message="Job not found." />
       </section>
     );
   }

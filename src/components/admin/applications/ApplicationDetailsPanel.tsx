@@ -6,6 +6,7 @@ import { getApplication, updateApplicationStatus } from "@/lib/api/applications"
 import type { ApiResponse } from "@/lib/types/api";
 import type { ApplicationDetail, ApplicationStatus } from "@/lib/types/application";
 import { timeAgo } from "@/lib/utils/format";
+import StateMessage from "@/components/ui/StateMessage";
 
 type ApplicationDetailsPanelProps = {
   applicationId: string;
@@ -69,9 +70,10 @@ export default function ApplicationDetailsPanel({
 
   if (isError || !data?.data) {
     return (
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
-        Unable to load application details.
-      </div>
+      <StateMessage
+        variant="card"
+        message="Unable to load application details."
+      />
     );
   }
 

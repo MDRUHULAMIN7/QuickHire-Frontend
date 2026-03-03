@@ -31,6 +31,7 @@ import { useDebouncedValue } from "@/lib/hooks/useDebouncedValue";
 import JobsTable from "@/components/admin/jobs/JobsTable";
 import JobFormModal from "@/components/admin/jobs/JobFormModal";
 import ConfirmModal from "@/components/admin/jobs/ConfirmModal";
+import StateMessage from "@/components/ui/StateMessage";
 
 const LIMIT_OPTIONS = [5, 10, 20, 30];
 
@@ -274,13 +275,9 @@ export default function AdminJobsPage() {
       </div>
 
       {isLoading ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
-          Loading jobs...
-        </div>
+        <StateMessage variant="card" message="Loading jobs..." />
       ) : jobs.length === 0 ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
-          No jobs found.
-        </div>
+        <StateMessage variant="card" message="No jobs found." />
       ) : (
         <JobsTable
           jobs={jobs}

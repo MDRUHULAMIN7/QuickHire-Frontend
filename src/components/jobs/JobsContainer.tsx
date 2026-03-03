@@ -12,6 +12,7 @@ import { buildJobQuery } from "@/lib/utils/adminJobs";
 import { EMPLOYMENT_TYPES, JOB_CATEGORIES } from "@/lib/utils/constants";
 import { useDebouncedValue } from "@/lib/hooks/useDebouncedValue";
 import JobQuickViewModal from "@/components/jobs/JobQuickViewModal";
+import StateMessage from "@/components/ui/StateMessage";
 
 const LIMIT_OPTIONS = [6, 12, 24];
 
@@ -247,13 +248,9 @@ export default function JobsContainer() {
       </div>
 
       {isLoading ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
-          Loading jobs...
-        </div>
+        <StateMessage variant="card" message="Loading jobs..." />
       ) : jobs.length === 0 ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
-          No jobs found.
-        </div>
+        <StateMessage variant="card" message="No jobs found." />
       ) : (
         <div className="grid gap-4">
           {jobs.map((job) => (

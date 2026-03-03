@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { X } from "lucide-react";
@@ -39,15 +39,20 @@ export default function JobApplyModal({
     },
   });
 
+  const [serverError, setServerError] = useState("");
+
   const mutation = useMutation({
     mutationFn: (payload: ApplicationPayload) => createApplication(payload),
     onSuccess: () => {
       toast.success("Application submitted");
+      setServerError("");
       reset();
       onClose();
     },
     onError: (err: any) => {
-      toast.error(err?.response?.data?.message || "Failed to submit");
+      const message = err?.response?.data?.message || "Failed to submit";
+      setServerError(message);
+      toast.error(message);
     },
   });
 
@@ -90,6 +95,11 @@ export default function JobApplyModal({
           </h3>
           <p className="mt-1 text-sm text-slate-500">{company}</p>
         </div>
+        {serverError && (
+          <div className="mb-4 rounded-lg border border-rose-200 bg-rose-50 px-4 py-2 text-sm text-rose-600">
+            {serverError}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">

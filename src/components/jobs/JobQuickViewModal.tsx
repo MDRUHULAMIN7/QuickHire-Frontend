@@ -7,6 +7,7 @@ import { getJob } from "@/lib/api/jobs";
 import type { ApiResponse } from "@/lib/types/api";
 import type { JobDetail } from "@/lib/types/job";
 import Link from "next/link";
+import StateMessage from "@/components/ui/StateMessage";
 
 type JobQuickViewModalProps = {
   open: boolean;
@@ -57,9 +58,9 @@ export default function JobQuickViewModal({
         </button>
 
         {isLoading ? (
-          <p className="text-sm text-slate-500">Loading job...</p>
+          <StateMessage message="Loading job..." />
         ) : isError || !job ? (
-          <p className="text-sm text-slate-500">Job not found.</p>
+          <StateMessage message="Job not found." />
         ) : (
           <>
             <h3 className="text-xl font-semibold text-slate-900">
