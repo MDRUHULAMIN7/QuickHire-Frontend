@@ -39,7 +39,7 @@ export default function LatestJobs() {
   const jobs = data?.data ?? [];
 
   return (
-    <section className="relative overflow-hidden bg-slate-50">
+    <section className="relative overflow-hidden bg-slate-50 mt-8">
       <div className="pointer-events-none absolute inset-y-0 right-0 w-[60%] opacity-60">
         <Image
           src="/images/hero/Pattern.png"
@@ -51,7 +51,7 @@ export default function LatestJobs() {
         />
       </div>
 
-      <div className="container mx-auto px-4 py-14 pt-22 relative">
+      <div className="container-class  py-14 pt-18 relative">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <h2 className="font-clash text-3xl md:text-[48px] font-bold text-slate-900">
             Latest <span className="text-[#26A4FF]">jobs open</span>

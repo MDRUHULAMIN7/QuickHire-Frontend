@@ -54,7 +54,7 @@ export default function ExploreByCategory() {
     }));
   }, [data?.data]);
   return (
-    <section className="container mx-auto px-4 py-12">
+    <section className="container-class">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <h2 className="font-clash text-5xl font-semibold text-slate-900">
           Explore by <span className="text-[#26A4FF]">category</span>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const CTAPage = () => {
   return (
-    <section className="px-2 md:px-10 py-10">
+    <section className="container-class py-10">
       <div className="relative">
         <div
         

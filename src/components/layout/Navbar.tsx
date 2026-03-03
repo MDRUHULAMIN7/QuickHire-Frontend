@@ -12,7 +12,6 @@ export function Navbar() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const profileRef = useRef<HTMLDivElement | null>(null);
   const { user, isLoggedIn, logout } = useAuth();
-  console.log(user)
 
   const initials = useMemo(() => {
     const label = user?.name ?? user?.email ?? user?.id;
@@ -48,7 +47,7 @@ export function Navbar() {
           : "bg-transparent",
       ].join(" ")}
     >
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+      <div className=" container-class  h-16 flex items-center justify-between">
         <div className="flex items-center  gap-x-12">
           <Link href="/" className="flex items-center gap-2">
             <Image src="/logo.png" alt="QuickHire" width={40} height={28} />

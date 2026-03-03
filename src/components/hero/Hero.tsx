@@ -109,7 +109,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="container mx-auto px-4 h-full relative">
+      <div className="container-class h-full relative">
         <div className="relative max-w-2xl pt-16 md:pt-30 md:pb-18 ">
           <h1 className="font-clash text-6xl md:text-5xl xl:text-[80px] font-extrabold leading-tight text-gray-900">
             Discover

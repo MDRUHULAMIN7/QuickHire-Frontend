@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function CompaniesBar() {
   return (
-    <section className="container mx-auto px-4 py-10">
+    <section className="container-class py-10">
       <p className="text-sm text-gray-500 mb-6">Companies we helped grow</p>
       <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-6 ">
         <Image

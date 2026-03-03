@@ -134,7 +134,7 @@ export default function FeaturedJobs() {
   });
 
   return (
-    <section className="container mx-auto px-4 py-12">
+    <section className="container-class">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <h2 className="font-clash text-3xl md:text-[48px] font-bold text-slate-900">
           Featured <span className="text-[#26A4FF]">jobs</span>

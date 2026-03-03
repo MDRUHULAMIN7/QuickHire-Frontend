@@ -19,6 +19,11 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-epilogue);
+
+}
+button{
+  cursor: pointer;
+
 }
 
 .font-brand { font-family: var(--font-redhat); }
@@ -42,4 +47,26 @@ body {
 .featured-swiper .swiper-pagination-bullet-active {
   opacity: 1;
   background: #26a4ff;
+}
+.container-class {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;   /* px-4 */
+  padding-right: 1rem;  /* px-4 */
+}
+
+/* md breakpoint (768px and up) */
+@media (min-width: 768px) {
+  .container-class {
+    padding-left: 3rem;   /* md:px-12 */
+    padding-right: 3rem;  /* md:px-12 */
+  }
+}
+
+/* lg breakpoint (1024px and up) */
+@media (min-width: 1024px) {
+  .container-class {
+    padding-left: 6rem;   /* lg:px-16 */
+    padding-right: 6rem;  /* lg:px-16 */
+  }
 }
